@@ -37,12 +37,16 @@ const CodeOutput = ({ editorRef, language }) => {
   }
   return (
     <div className="flex flex-1 flex-col gap-2">
-      <Text>Output</Text>
-      <Button color="#333" loading={loading} onClick={runCode}>
-        <div className="flex items-center gap-1 text-lg">
-          <BiCode /> <span>Run Code</span>
-        </div>
-      </Button>
+      <div>
+        <Text size="sm" fw="bold">
+          Output
+        </Text>
+        <Button color="#333" loading={loading} onClick={runCode}>
+          <div className="flex items-center gap-1 text-lg">
+            <BiCode /> <span>Run Code</span>
+          </div>
+        </Button>
+      </div>
       <div
         className={`"h-[48.5vh] font-mono" + rounded-sm bg-black/40 p-4 ${error ? "border border-red-500 text-red-500" : ""}`}
       >

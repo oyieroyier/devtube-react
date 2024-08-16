@@ -4,6 +4,7 @@ import { useResultsContext } from "./contexts/results-context/ResultsContextProv
 import CodeEditor from "./components/code-editor/CodeEditor";
 import Introduction from "./components/intro-section/Introduction";
 import YouTubeVideo from "./components/youtube-video/YouTubeVideo";
+import Footer from "./components/footer/Footer";
 
 export default function App() {
   const { selectedVideo } = useResultsContext();
@@ -17,11 +18,13 @@ export default function App() {
       className="min-h-screen p-4 lg:p-8"
     >
       {!selectedVideo && <Introduction />}
-      
-			<SearchForm />
+
+      <SearchForm />
 
       {selectedVideo && <YouTubeVideo />}
-      {!selectedVideo && <CodeEditor />}
+      {selectedVideo && <CodeEditor />}
+
+      <Footer />
     </Flex>
   );
 }

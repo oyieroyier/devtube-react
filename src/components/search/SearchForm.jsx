@@ -3,6 +3,7 @@ import { useDisclosure } from "@mantine/hooks";
 import { useSearchContextProvider } from "../../contexts/search-context/SearchContextProvider";
 import { useResultsContext } from "../../contexts/results-context/ResultsContextProvider";
 import ResultsModal from "../results/ResultsModal";
+import { Box } from "@mantine/core";
 const apiKey = import.meta.env.VITE_YOUTUBE_API_KEY;
 
 const SearchForm = () => {
@@ -24,12 +25,12 @@ const SearchForm = () => {
   };
 
   return (
-    <div>
+    <Box>
       <form onSubmit={handleSubmit}>
         <Search />
       </form>
       <ResultsModal opened={opened} close={close} results={results} />
-    </div>
+    </Box>
   );
 };
 

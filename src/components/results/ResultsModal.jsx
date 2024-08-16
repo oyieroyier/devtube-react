@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-import { Flex, Modal } from "@mantine/core";
+import { Flex, Loader, Modal } from "@mantine/core";
 import SingleResult from "./SingleResult";
 
 const ResultsModal = ({ opened, close, results }) => {
@@ -11,7 +11,8 @@ const ResultsModal = ({ opened, close, results }) => {
       onClose={close}
       title="YouTube Search Results"
     >
-      <Flex gap={"1rem"} direction={"column"}>
+      <Flex gap={"1rem"} direction={"column"} align="center">
+        {!results?.length && <Loader color="rgba(64, 31, 31, 1)" />}
         {results?.map((result, index) => (
           <SingleResult key={index} result={result} close={close} />
         ))}

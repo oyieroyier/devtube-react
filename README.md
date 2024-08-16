@@ -10,7 +10,23 @@ In this mini project, I rewrite my [first ever solo frontend project](https://gi
 - [Axios](https://axios-http.com/docs/intro), and
 - [Mantine](https://mantine.dev/) component library.
 
-**NB:Feel free to fork this repo and play around with it. :)**
+![Landing Page]("/public/readme/devtube-react.png")
+
+### Notes:
+
+1. **Feel free to fork your copy of this repo at any point and play around with it. The MVP is done. :)**
+
+2. I have currently limited search results to just **ONE** because of YoTube API quotas. If you want to increase search results, fork the repository, generate your own API Key from the [Google Cloud Console](https://console.cloud.google.com/?project=devtube-371608),use it in the `SearchForm` component, and increase the number of queries by changing `maxResults=1` to any number.
+
+3. If the search results do not work when you test the live link, it means the daily quota on my API key (_10,000 Queries per day_) has been reached (and I have been to busy to regenerate). Generate your own API Key from the [Google Cloud Console](https://console.cloud.google.com/?project=devtube-371608) and replace mine with it in the `SearchForm` component.
+
+## User Story
+
+A user can:
+
+- Search for a YouTube video on the site.
+- Watch the YouTube video on the site.
+- Code on the site using a provided compiler/code editing API.
 
 ## System Requirements
 
