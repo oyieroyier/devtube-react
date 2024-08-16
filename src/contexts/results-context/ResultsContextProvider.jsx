@@ -5,6 +5,7 @@ import ResultsContext from "./ResultsContext";
 
 const ResultsContextProvider = ({ children }) => {
   const [results, setResults] = useState([]);
+  const [selectedVideo, setSelectedVideo] = useState("");
 
   // context methods
   const updateResults = (newResults) => {
@@ -15,6 +16,8 @@ const ResultsContextProvider = ({ children }) => {
   const contextValue = {
     results,
     updateResults,
+    selectedVideo,
+    setSelectedVideo,
   };
 
   return (
