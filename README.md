@@ -1,3 +1,3 @@
 # React + Vite
 
-Recreating my first ever Frontend project using React JS.
+Playing around with Mantine by recreating my first ever frontend project using React JS, YouTube API ad Mantine.
