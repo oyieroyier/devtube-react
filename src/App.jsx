@@ -21,7 +21,7 @@ export default function App() {
             DevTube
           </Text>
           <Text size="1.5rem" ta="center" className="font-minorHeading">
-            Stream YouTube tutorials and code right here—your all-in-one coding
+            Watch YouTube tutorials and code right here— your all-in-one coding
             playground!
           </Text>
         </>

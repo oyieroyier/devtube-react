@@ -6,24 +6,31 @@ const CodeEditor = () => {
   const editorRef = useRef();
   const [value, setValue] = useState("");
 
+  const [language, setLanguage] = useState("javascript");
+
   function onMount(editor) {
     editorRef.current = editor;
     editor.focus();
   }
 
+  function onSelect(language) {
+    setLanguage(language);
+  }
+
   return (
-		<div>
-			<LanguageSelector />
-			<Editor
-				height="50vh"
-				theme="vs-dark"
-				defaultLanguage="javascript"
-				defaultValue="//Some comment"
-				value={value}
-				onChange={(value) => setValue(value)}
-				onMount={onMount}
-			/>
-		</div>
+    <div className="w-full">
+      <LanguageSelector language={language} onSelect={onSelect} />
+      <Editor
+        height="50vh"
+        width={"100%"}
+        theme="vs-dark"
+        language={language}
+        defaultValue="//Some comment"
+        value={value}
+        onChange={(value) => setValue(value)}
+        onMount={onMount}
+      />
+    </div>
   );
 };
 
