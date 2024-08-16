@@ -2,6 +2,7 @@ import { Flex, Text } from "@mantine/core";
 import SearchForm from "./components/search/SearchForm";
 import { useResultsContext } from "./contexts/results-context/ResultsContextProvider";
 import YouTubeVideo from "./components/YouTubeVideo";
+import CodeEditor from "./components/code-editor/CodeEditor";
 
 export default function App() {
   const { selectedVideo } = useResultsContext();
@@ -28,7 +29,7 @@ export default function App() {
       <SearchForm />
 
       {selectedVideo && <YouTubeVideo />}
-      <div id="lower_section"></div>
+      <CodeEditor />
     </Flex>
   );
 }
