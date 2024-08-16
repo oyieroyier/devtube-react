@@ -17,11 +17,12 @@ const SearchForm = () => {
     setSearch("");
 
     fetch(
-      `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&type=video&part=snippet&maxResults=2&q=${search}`,
+      `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&type=video&part=snippet&maxResults=1&q=${search}`,
     )
       .then((response) => response.json())
       .then(({ items }) => updateResults(items));
   };
+
   return (
     <div>
       <form onSubmit={handleSubmit}>

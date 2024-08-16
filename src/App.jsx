@@ -1,8 +1,9 @@
-import { Flex, Text } from "@mantine/core";
+import { Flex } from "@mantine/core";
 import SearchForm from "./components/search/SearchForm";
 import { useResultsContext } from "./contexts/results-context/ResultsContextProvider";
-import YouTubeVideo from "./components/YouTubeVideo";
 import CodeEditor from "./components/code-editor/CodeEditor";
+import Introduction from "./components/intro-section/Introduction";
+import YouTubeVideo from "./components/youtube-video/YouTubeVideo";
 
 export default function App() {
   const { selectedVideo } = useResultsContext();
@@ -15,21 +16,12 @@ export default function App() {
       gap="1rem"
       className="min-h-screen p-4 lg:p-8"
     >
-      {!selectedVideo && (
-        <>
-          <Text size="2rem" ta="center" className="font-headings">
-            DevTube
-          </Text>
-          <Text size="1.5rem" ta="center" className="font-minorHeading">
-            Watch YouTube tutorials and code right here— your all-in-one coding
-            playground!
-          </Text>
-        </>
-      )}
-      <SearchForm />
+      {!selectedVideo && <Introduction />}
+      
+			<SearchForm />
 
       {selectedVideo && <YouTubeVideo />}
-      <CodeEditor />
+      {!selectedVideo && <CodeEditor />}
     </Flex>
   );
 }

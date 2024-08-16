@@ -1,4 +1,4 @@
-import { useResultsContext } from "../contexts/results-context/ResultsContextProvider";
+import { useResultsContext } from "../../contexts/results-context/ResultsContextProvider";
 
 const YouTubeVideo = () => {
   const { selectedVideo } = useResultsContext();

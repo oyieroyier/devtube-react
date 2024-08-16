@@ -7,6 +7,7 @@ import { MantineProvider } from "@mantine/core";
 import { Notifications } from "@mantine/notifications";
 import ResultsContextProvider from "./contexts/results-context/ResultsContextProvider";
 import SearchContextProvider from "./contexts/search-context/SearchContextProvider";
+import { BiMoon, BiSun } from "react-icons/bi";
 
 const theme = localStorage.getItem("theme");
 
@@ -25,8 +26,10 @@ createRoot(document.getElementById("root")).render(
     <MantineProvider defaultColorScheme={theme}>
       <SearchContextProvider>
         <ResultsContextProvider>
-          <button onClick={changeTheme}>haha</button>
-          <Notifications />
+          <button onClick={changeTheme} className="absolute left-4 top-4">
+            {theme === "dark" ? <BiSun /> : <BiMoon />}
+          </button>
+          <Notifications position="top-center" zIndex={1000} />
           <App />
         </ResultsContextProvider>
       </SearchContextProvider>
