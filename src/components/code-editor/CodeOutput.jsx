@@ -8,6 +8,7 @@ import { BiCode } from "react-icons/bi";
 const CodeOutput = ({ editorRef, language }) => {
   const [output, setOutput] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   async function runCode() {
     const sourceCode = editorRef.current.getValue();
@@ -17,7 +18,9 @@ const CodeOutput = ({ editorRef, language }) => {
     try {
       setLoading(true);
       const { run: result } = await executeCode(language, sourceCode);
-      setOutput(result.output);
+      setOutput(result.output.split("\n"));
+
+      result.stderr ? setError(true) : setError(false);
     } catch (error) {
       notifications.show({
         position: "top-right",
@@ -40,8 +43,12 @@ const CodeOutput = ({ editorRef, language }) => {
           <BiCode /> <span>Run Code</span>
         </div>
       </Button>
-      <div className="h-[48.5vh] rounded-sm bg-black/40 p-4 font-mono">
-        {output ? output : `Click "Run Code" to see the output`}
+      <div
+        className={`"h-[48.5vh] font-mono" + rounded-sm bg-black/40 p-4 ${error ? "border border-red-500 text-red-500" : ""}`}
+      >
+        {output
+          ? output.map((line, index) => <p key={index}>{line}</p>)
+          : `Click "Run Code" to see the output`}
       </div>
     </div>
   );
