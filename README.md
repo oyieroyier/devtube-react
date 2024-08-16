@@ -1,3 +1,11 @@
-# React + Vite
+# Dev Tube in React JS
 
-Playing around with Mantine by recreating my first ever frontend project using React JS, Monaco React Editor YouTube API ad Mantine.
+In this hobby project, I recreate my [first ever solo frontend project](https://github.com/oyieroyier/devtube) using:
+
+- [React JS](https://react.dev/)
+- [YouTube API](https://developers.google.com/youtube/v3)
+- [Piston API](https://piston.readthedocs.io/en/latest/api-v2/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Monaco React Editor](https://www.npmjs.com/package/@monaco-editor/react)
+- [Axios](https://axios-http.com/docs/intro) and
+- [Mantine](https://mantine.dev/) component library.

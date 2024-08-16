@@ -4,8 +4,6 @@ import { Flex, Modal } from "@mantine/core";
 import SingleResult from "./SingleResult";
 
 const ResultsModal = ({ opened, close, results }) => {
-  console.log(results);
-
   return (
     <Modal
       size={"xl"}

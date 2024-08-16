@@ -5,14 +5,14 @@ const Search = () => {
   const { search, handleSearch } = useSearchContextProvider();
 
   return (
-    <div className="group flex size-14 items-center overflow-hidden rounded-full bg-slate-900 p-5 shadow-[2px_2px_20px_rgba(0,0,0,0.08)] duration-300 hover:w-72 hover:duration-300">
+    <div className="group flex size-8 items-center overflow-hidden rounded-full bg-slate-900 p-5 shadow-[2px_2px_20px_rgba(0,0,0,0.08)] duration-300 hover:w-72 hover:duration-300 lg:size-14">
       <div className="">
-        <BiSearch className="size-7 animate-pulse fill-white" />
+        <BiSearch className="size-5 animate-pulse fill-white lg:size-7" />
       </div>
       <input
         placeholder="Search for a video..."
         type="text"
-        className="w-full bg-transparent px-4 text-[20px] font-normal text-white outline-none"
+        className="w-full bg-transparent px-4 text-base font-normal text-white outline-none md:text-xl"
         value={search}
         onChange={handleSearch}
       />
