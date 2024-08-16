@@ -23,7 +23,7 @@ const CodeEditor = () => {
   return (
     <div className="w-full">
       <div className="flex flex-col gap-2 md:flex-row md:gap-4">
-        <div className="w-full flex-1">
+        <div className="h-full w-full flex-1">
           <LanguageSelector language={language} onSelect={onSelect} />
           <Editor
             height="50vh"
