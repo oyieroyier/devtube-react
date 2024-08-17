@@ -5,12 +5,7 @@ import SingleResult from "./SingleResult";
 
 const ResultsModal = ({ opened, close, results }) => {
   return (
-    <Modal
-      size={"xl"}
-      opened={opened}
-      onClose={close}
-      title="YouTube Search Results"
-    >
+    <Modal size={"xl"} opened={opened} onClose={close} title="Search results">
       <Flex gap={"1rem"} direction={"column"} align="center">
         {!results?.length && <Loader color="rgba(64, 31, 31, 1)" />}
         {results?.map((result, index) => (

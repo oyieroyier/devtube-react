@@ -48,11 +48,13 @@ const CodeOutput = ({ editorRef, language }) => {
         </Button>
       </div>
       <div
-        className={`"h-[48.5vh] font-mono" + rounded-sm bg-black/40 p-4 ${error ? "border border-red-500 text-red-500" : ""}`}
+        className={`" h-full rounded-sm bg-black/90 p-4 font-mono ${error ? "border border-red-500 text-red-500" : "text-slate-300"}`}
       >
-        {output
-          ? output.map((line, index) => <p key={index}>{line}</p>)
-          : `Click "Run Code" to see the output`}
+        {output ? (
+          output.map((line, index) => <p key={index}>{line}</p>)
+        ) : (
+          <p className="h-full">Click &quot;Run Code&quot; to see the output</p>
+        )}
       </div>
     </div>
   );

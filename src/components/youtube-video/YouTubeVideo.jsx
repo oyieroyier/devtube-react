@@ -5,7 +5,7 @@ const YouTubeVideo = () => {
 
   return (
     <iframe
-      className="h-[50vh] w-full"
+      className="h-[50vh] w-full rounded-2xl"
       src={`https://www.youtube.com/embed/${selectedVideo}`}
       allow="fullscreen"
     ></iframe>
