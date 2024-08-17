@@ -35,7 +35,7 @@ const CodeEditor = () => {
             onMount={onMount}
           />
         </div>
-        <CodeOutput editorRef={editorRef} language={language} value={value} />{" "}
+        <CodeOutput editorRef={editorRef} language={language} />
       </div>
     </div>
   );
