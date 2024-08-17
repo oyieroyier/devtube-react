@@ -9,7 +9,7 @@ import ResultsContextProvider from "./contexts/results-context/ResultsContextPro
 import SearchContextProvider from "./contexts/search-context/SearchContextProvider";
 import { BiMoon, BiSun } from "react-icons/bi";
 
-const theme = localStorage.getItem("theme");
+const theme = localStorage.getItem("theme") || "light";
 
 function changeTheme() {
   if (theme === "light") {

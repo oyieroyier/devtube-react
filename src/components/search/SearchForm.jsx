@@ -16,6 +16,7 @@ const SearchForm = () => {
     e.preventDefault();
     open();
     setSearch("");
+
     axios
       .get(
         `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&type=video&part=snippet&maxResults=1&q=${search}`,
@@ -28,11 +29,7 @@ const SearchForm = () => {
       <form onSubmit={handleSubmit}>
         <Search />
       </form>
-      <ResultsModal
-        opened={opened}
-        close={close}
-        results={results}
-      />
+      <ResultsModal opened={opened} close={close} results={results} />
     </Box>
   );
 };
