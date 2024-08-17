@@ -5,6 +5,7 @@ import { useResultsContext } from "../../contexts/results-context/ResultsContext
 import ResultsModal from "../results/ResultsModal";
 import { Box } from "@mantine/core";
 import axios from "axios";
+
 const apiKey = import.meta.env.VITE_YOUTUBE_API_KEY;
 
 const SearchForm = () => {
@@ -15,11 +16,9 @@ const SearchForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     open();
-    setSearch("");
-
     axios
       .get(
-        `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&type=video&part=snippet&maxResults=1&q=${search}`,
+        `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&type=video&part=snippet&maxResults=1&q=${search}`
       )
       .then(({ data: { items } }) => updateResults(items));
   };

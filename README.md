@@ -10,7 +10,7 @@ In this mini project, I rewrite my [first ever solo frontend project](https://gi
 - [Axios](https://axios-http.com/docs/intro), and
 - [Mantine](https://mantine.dev/) component library.
 
-![Landing Page]("/public/readme/devtube-react.png")
+![Landing Page]("./public/readme/devtube-react.png")
 
 ### Notes:
 

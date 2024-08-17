@@ -2,10 +2,19 @@
 
 import { Flex, Loader, Modal } from "@mantine/core";
 import SingleResult from "./SingleResult";
+import { useSearchContextProvider } from "../../contexts/search-context/SearchContextProvider.jsx";
 
 const ResultsModal = ({ opened, close, results }) => {
+
+const { search, setSearch } =  useSearchContextProvider()
+
+  const closeModal = () => {
+    setSearch("");
+    close();
+  };
+
   return (
-    <Modal size={"xl"} opened={opened} onClose={close} title="Search results">
+    <Modal size={"xl"} opened={opened} onClose={closeModal} title={`Search results for ${search}`}>
       <Flex gap={"1rem"} direction={"column"} align="center">
         {!results?.length && <Loader color="rgba(64, 31, 31, 1)" />}
         {results?.map((result, index) => (
