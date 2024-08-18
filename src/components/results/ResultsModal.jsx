@@ -5,8 +5,7 @@ import SingleResult from "./SingleResult";
 import { useSearchContextProvider } from "../../contexts/search-context/SearchContextProvider.jsx";
 
 const ResultsModal = ({ opened, close, results }) => {
-
-const { search, setSearch } =  useSearchContextProvider()
+  const { search, setSearch } = useSearchContextProvider();
 
   const closeModal = () => {
     setSearch("");
@@ -14,7 +13,12 @@ const { search, setSearch } =  useSearchContextProvider()
   };
 
   return (
-    <Modal size={"xl"} opened={opened} onClose={closeModal} title={`Search results for ${search}`}>
+    <Modal
+      size={"xl"}
+      opened={opened}
+      onClose={closeModal}
+      title={`Search results for "${search}"`}
+    >
       <Flex gap={"1rem"} direction={"column"} align="center">
         {!results?.length && <Loader color="rgba(64, 31, 31, 1)" />}
         {results?.map((result, index) => (

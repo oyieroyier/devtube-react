@@ -9,7 +9,7 @@ import axios from "axios";
 const apiKey = import.meta.env.VITE_YOUTUBE_API_KEY;
 
 const SearchForm = () => {
-  const { search, setSearch } = useSearchContextProvider();
+  const { search } = useSearchContextProvider();
   const { results, updateResults } = useResultsContext();
   const [opened, { open, close }] = useDisclosure(false);
 
