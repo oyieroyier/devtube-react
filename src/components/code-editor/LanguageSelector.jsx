@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import { Select, Modal, Button, Flex, Box } from "@mantine/core";
+import { Select } from "@mantine/core";
 import { LANGUAGE_VERSIONS } from "./constants";
-import { lowerFirst, upperFirst } from "@mantine/hooks";
+import { upperFirst } from "@mantine/hooks";
+import ConfirmLanguageChangeModal from "./ConfirmLanguageChangeModal";
 
 const languages = Object.entries(LANGUAGE_VERSIONS);
 
@@ -19,11 +20,6 @@ const LanguageSelector = ({ language, onSelect }) => {
     setModalOpen(true);
   };
 
-  const confirmLanguageChange = () => {
-    onSelect(lowerFirst(pendingLanguage).split(",")[0]);
-    setModalOpen(false);
-  };
-
   return (
     <div>
       <Select
@@ -35,29 +31,12 @@ const LanguageSelector = ({ language, onSelect }) => {
         onChange={handleLanguageChange}
       />
 
-      <Modal
-        opened={modalOpen}
-        onClose={() => setModalOpen(false)}
-        title="Warning"
-      >
-        <Flex direction="column" gap="lg">
-          <Box>
-            <p>
-              Changing the programming language will clear all code currently in
-              the editor.
-            </p>
-            <p>Are you sure you want to proceed?</p>
-          </Box>
-          <Flex justify="center" gap="xl">
-            <Button onClick={confirmLanguageChange} bg="#333">
-              Confirm
-            </Button>
-            <Button onClick={() => setModalOpen(false)} color="#666">
-              Cancel
-            </Button>
-          </Flex>
-        </Flex>
-      </Modal>
+      <ConfirmLanguageChangeModal
+        pendingLanguage={pendingLanguage}
+        setModalOpen={setModalOpen}
+        onSelect={onSelect}
+        modalOpen={modalOpen}
+      />
     </div>
   );
 };
