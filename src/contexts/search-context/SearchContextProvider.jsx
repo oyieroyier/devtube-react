@@ -26,12 +26,12 @@ const SearchContextProvider = ({ children }) => {
 
 export default SearchContextProvider;
 
-export const useSearchContextProvider = () => {
+export const useSearchContext = () => {
   const context = useContext(SearchContext);
 
   if (!context) {
     throw new Error(
-      "useSearchContextProvider must be used within a SearchContextProvider",
+      "useSearchContext must be used within a SearchContextProvider",
     );
   }
 

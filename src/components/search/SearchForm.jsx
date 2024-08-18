@@ -1,6 +1,6 @@
 import Search from "./Search";
 import { useDisclosure } from "@mantine/hooks";
-import { useSearchContextProvider } from "../../contexts/search-context/SearchContextProvider";
+import { useSearchContext } from "../../contexts/search-context/SearchContextProvider";
 import { useResultsContext } from "../../contexts/results-context/ResultsContextProvider";
 import ResultsModal from "../results/ResultsModal";
 import { Box } from "@mantine/core";
@@ -9,7 +9,7 @@ import axios from "axios";
 const apiKey = import.meta.env.VITE_YOUTUBE_API_KEY;
 
 const SearchForm = () => {
-  const { search } = useSearchContextProvider();
+  const { search } = useSearchContext();
   const { results, updateResults } = useResultsContext();
   const [opened, { open, close }] = useDisclosure(false);
 

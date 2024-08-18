@@ -2,10 +2,10 @@
 
 import { Flex, Loader, Modal } from "@mantine/core";
 import SingleResult from "./SingleResult";
-import { useSearchContextProvider } from "../../contexts/search-context/SearchContextProvider.jsx";
+import { useSearchContext } from "../../contexts/search-context/SearchContextProvider.jsx";
 
 const ResultsModal = ({ opened, close, results }) => {
-  const { search, setSearch } = useSearchContextProvider();
+  const { search, setSearch } = useSearchContext();
 
   const closeModal = () => {
     setSearch("");

@@ -1,12 +1,15 @@
 /* eslint-disable react/prop-types */
 import { Card, Image, Text, Badge, Button, Group } from "@mantine/core";
 import { useResultsContext } from "../../contexts/results-context/ResultsContextProvider";
+import { useSearchContext } from "../../contexts/search-context/SearchContextProvider";
 
 const SingleResult = ({ result, close }) => {
   const { setSelectedVideo } = useResultsContext();
+  const { setSearch } = useSearchContext();
 
   function handleClick() {
     setSelectedVideo(result.id.videoId);
+    setSearch("");
     close();
   }
 
