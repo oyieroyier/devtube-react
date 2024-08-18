@@ -10,23 +10,32 @@ In this mini project, I rewrite my [first ever solo frontend project](https://gi
 - [Axios](https://axios-http.com/docs/intro), and
 - [Mantine](https://mantine.dev/) component library.
 
-![Landing Page]("./public/readme/devtube-react.png")
+![Preview of the Todo App as viewed on a Samsung Galaxy Fold 2 phone.](./public/readme/devtube-react.png)
 
 ### Notes:
 
 1. **Feel free to fork your copy of this repo at any point and play around with it. The MVP is done. :)**
 
-2. I have currently limited search results to just **ONE** because of YoTube API quotas. If you want to increase search results, fork the repository, generate your own API Key from the [Google Cloud Console](https://console.cloud.google.com/?project=devtube-371608),use it in the `SearchForm` component, and increase the number of queries by changing `maxResults=1` to any number.
+2. I have currently limited search results to just **ONE** because of YouTube API quotas. If you want to increase search results, fork the repository, generate your own API Key from the [Google Cloud Console](https://console.cloud.google.com/?project=devtube-371608), use your in the `SearchForm` component, and increase the number of queries by changing `maxResults=1` to any number.
 
-3. If the search results do not work when you test the live link, it means the daily quota on my API key (_10,000 Queries per day_) has been reached (this quota is reset daily). You could wait or alternatively, generate your own API Key from the [Google Cloud Console](https://console.cloud.google.com/?project=devtube-371608) and replace mine with it in the `SearchForm` component.
+3. If the search results do not work when you test the live link, it means the daily quota of _10,000 Queries per day_ on my YouTube API key has been reached. This quota is reset daily so you could wait or alternatively, generate your own API Key from the [Google Cloud Console](https://console.cloud.google.com/?project=devtube-371608) and replace mine with it in the `SearchForm` component.
 
 ## User Story
 
 A user can:
 
-- Search for a YouTube video on the site.
-- Watch the YouTube video on the site.
-- Code on the site using a provided compiler/code editing API.
+- Search for a YouTube tutorial on the site.
+- Watch the tutorial on the site.
+- Code and run code on the site using the inbuilt compiler/code editor.
+
+## Supported Languages
+
+- JavaScript(18.15.0)
+- TypeScript(5.0.3)
+- Python(3.10.0)
+- Java(15.0.2)
+- C-Sharp(6.12.0)
+- PHP(8.2.3)
 
 ## System Requirements
 
