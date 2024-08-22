@@ -10,7 +10,7 @@ In this mini project, I rewrite my [first ever solo frontend project](https://gi
 - [Axios](https://axios-http.com/docs/intro), and
 - [Mantine](https://mantine.dev/) component library.
 
-![Preview of the Todo App as viewed on a Samsung Galaxy Fold 2 phone.](./public/readme/devtube-react.png)
+![Preview of the Homepage playing a video with the code editor loaded.](./public/readme/devtube-react.png)
 
 ### Notes:
 
@@ -30,12 +30,14 @@ A user can:
 
 ## Supported Languages
 
-- JavaScript(18.15.0)
-- TypeScript(5.0.3)
-- Python(3.10.0)
-- Java(15.0.2)
-- C-Sharp(6.12.0)
-- PHP(8.2.3)
+Updated on 22nd August 2024 to support ALL programming languages 🎉🎉🎉.
+
+- ~~JavaScript(18.15.0)~~
+- ~~TypeScript(5.0.3)~~
+- ~~Python(3.10.0)~~
+- ~~Java(15.0.2)~~
+- ~~C-Sharp(6.12.0)~~
+- ~~PHP(8.2.3)~~
 
 ## System Requirements
 

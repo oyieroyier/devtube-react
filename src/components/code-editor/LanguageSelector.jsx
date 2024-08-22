@@ -1,17 +1,19 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import { Select } from "@mantine/core";
-import { LANGUAGE_VERSIONS } from "./constants";
 import { upperFirst } from "@mantine/hooks";
 import ConfirmLanguageChangeModal from "./ConfirmLanguageChangeModal";
-
-const languages = Object.entries(LANGUAGE_VERSIONS);
-
-const languageOptionsInDropdown = languages.map(([language, version]) => {
-  return `${upperFirst(language)}, ${version}`;
-});
+import { useSupportedLanguagesContext } from "../../contexts/supported-languages-context/SupportedLanguagesContextProvider";
 
 const LanguageSelector = ({ language, onSelect }) => {
+  const { supportedLanguages } = useSupportedLanguagesContext();
+
+  const languages = Object.entries(supportedLanguages);
+
+  const languageOptionsInDropdown = languages.map(([language, version]) => {
+    return `${upperFirst(language)}, ${version}`;
+  });
+
   const [modalOpen, setModalOpen] = useState(false);
   const [pendingLanguage, setPendingLanguage] = useState(null);
 
@@ -26,7 +28,7 @@ const LanguageSelector = ({ language, onSelect }) => {
         label="Select a Programming Language:"
         placeholder="Click Here"
         data={languageOptionsInDropdown}
-        value={`${upperFirst(language)}, ${LANGUAGE_VERSIONS[language]}`}
+        value={`${upperFirst(language)}, ${supportedLanguages[language]}`}
         allowDeselect={false}
         onChange={handleLanguageChange}
       />
